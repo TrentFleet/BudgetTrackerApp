@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import { ThemeProvider } from "next-themes";
 import React, { ReactNode } from "react";
@@ -18,8 +17,8 @@ function RootProviders({ children }: { children: ReactNode }) {
       >
         {children}
       </ThemeProvider>
-    //   <ReactQueryDevtools initialIsOpen={false} />
-    // </QueryClientProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 
