@@ -14,6 +14,8 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
+
+
 model UserSettings {
   userId   String @id
   currency String
