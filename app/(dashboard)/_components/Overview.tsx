@@ -18,16 +18,17 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
 
   return (
     <>
-      <div className="container flex flex-wrap items-end justify-between gap-2 py-6">
-        <h2 className="text-3xl font-bold">Overview</h2>
-        <div className="flex items-center gap-3">
+      <div className="container flex flex-wrap items-center justify-between gap-2 py-6">
+        <h2 className="text-2xl">Overview</h2>
+        <div className="flex items-center justify-center gap-4">
           <DateRangePicker
+          
             initialDateFrom={dateRange.from}
             initialDateTo={dateRange.to}
             showCompare={false}
             onUpdate={(values) => {
               const { from, to } = values.range;
-              // We update the date range only if both dates are set
+
 
               if (!from || !to) return;
               if (differenceInDays(to, from) > MAX_DATE_RANGE_DAYS) {

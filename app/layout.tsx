@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import  RootProvider  from "@/components/providers/RootProviders";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", ],
+});
 
 export const metadata: Metadata = {
-  title: "BudgetTracker",
+  title: "MoneySaver",
   description: "CodewithTrent",
 };
 
@@ -26,7 +29,7 @@ export default function RootLayout({
           colorScheme: "dark",
         }}
       >
-        <body className={inter.className}>
+        <body className={poppins.className}>
           <Toaster richColors position="bottom-right" />
           <RootProvider>{children}</RootProvider>
         </body>
