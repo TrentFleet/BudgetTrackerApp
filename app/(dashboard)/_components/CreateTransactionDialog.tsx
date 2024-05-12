@@ -239,6 +239,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
         </DialogFooter>
       </DialogContent>
     </Dialog>
+  
   );
 }
 
