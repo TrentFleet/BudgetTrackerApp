@@ -18,9 +18,22 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
 
   return (
     <>
-      <div className="container flex flex-wrap items-center justify-between gap-2 py-6">
+      <div className="container flex flex-wrap items-center justify-center gap-2 py-6">
         <h2 className="text-2xl">Overview</h2>
-        <div className="flex items-center justify-center gap-4">
+      </div>
+      <div className="container flex w-full flex-col gap-2">
+        <StatsCards
+          userSettings={userSettings}
+          from={dateRange.from}
+          to={dateRange.to}
+        />
+
+        <CategoriesStats
+          userSettings={userSettings}
+          from={dateRange.from}
+          to={dateRange.to}
+        />
+        <div className="flex items-center justify-center py-4">
           <DateRangePicker
           
             initialDateFrom={dateRange.from}
@@ -42,19 +55,6 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
             }}
           />
         </div>
-      </div>
-      <div className="container flex w-full flex-col gap-2">
-        <StatsCards
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
-
-        <CategoriesStats
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
       </div>
     </>
   );
