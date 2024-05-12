@@ -9,7 +9,6 @@ import { differenceInDays, startOfMonth } from "date-fns";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
-
 function Overview({ userSettings }: { userSettings: UserSettings }) {
   const [dateRange, setDateRange] = useState<{ from: Date; to: Date }>({
     from: startOfMonth(new Date()),
@@ -18,30 +17,15 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
 
   return (
     <>
-      <div className="container flex flex-wrap items-center justify-center gap-2 py-6">
+      <div className="container flex flex-wrap items-center justify-between gap-2 py-6">
         <h2 className="text-2xl">Overview</h2>
-      </div>
-      <div className="container flex w-full flex-col gap-2">
-        <StatsCards
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
-
-        <CategoriesStats
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
-        <div className="flex items-center justify-center py-4">
+        <div className="md:flex md:items-center md:justify-center gap-4">
           <DateRangePicker
-          
             initialDateFrom={dateRange.from}
             initialDateTo={dateRange.to}
             showCompare={false}
             onUpdate={(values) => {
               const { from, to } = values.range;
-
 
               if (!from || !to) return;
               if (differenceInDays(to, from) > MAX_DATE_RANGE_DAYS) {
@@ -55,6 +39,19 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
             }}
           />
         </div>
+      </div>
+      <div className="container flex w-full flex-col gap-2">
+        <StatsCards
+          userSettings={userSettings}
+          from={dateRange.from}
+          to={dateRange.to}
+        />
+
+        <CategoriesStats
+          userSettings={userSettings}
+          from={dateRange.from}
+          to={dateRange.to}
+        />
       </div>
     </>
   );
