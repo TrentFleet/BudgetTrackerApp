@@ -31,14 +31,14 @@ async function page() {
         <div className="container flex flex-wrap items-center justify-between gap-2 py-4">
           <p className="text-3xl font-bold">Hi {user.firstName}! </p>
 
-          <div className="flex items-center gap-6 py-2">
+          <div className="flex items-center justify-center gap-6 py-2">
             <CreateTransactionDialog
               trigger={
                 <Button
                   variant={"outline"}
-                  className="border-emerald-600 bg-zinc-950 text-white hover:bg-emerald-700 hover:text-white"
+                  className="border-emerald-600 px-10 bg-zinc-950 text-white hover:bg-emerald-700 hover:text-white"
                 >
-                  Income 
+                  Add Income 
                 </Button>
               }
               type="income"
@@ -48,9 +48,9 @@ async function page() {
               trigger={
                 <Button
                   variant={"outline"}
-                  className="border-rose-500 bg-zinc-950 text-white hover:bg-rose-700 hover:text-white"
+                  className="border-rose-500 bg-zinc-950 px-10 text-white hover:bg-rose-700 hover:text-white"
                 >
-                 Expense 
+                 Add Expense 
                 </Button>
               }
               type="expense"
