@@ -108,7 +108,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
     
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="w-3/4 px-auto mx-auto flex flex-col ">
+      <DialogContent className="px-auto flex flex-col">
         <DialogHeader>
           <DialogTitle>
             New{" "}

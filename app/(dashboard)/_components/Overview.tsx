@@ -21,7 +21,7 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
         <h2 className="text-2xl">Overview</h2>
         <div className="flex items-center justify-center gap-4">
       </div>
-      <div className="container flex w-full flex-col gap-2">
+      <div className="container flex flex-col gap-2">
         <StatsCards
           userSettings={userSettings}
           from={dateRange.from}
