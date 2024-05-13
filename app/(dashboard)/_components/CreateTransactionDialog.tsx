@@ -105,23 +105,26 @@ function CreateTransactionDialog({ trigger, type }: Props) {
   );
 
   return (
+    
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent>
+      <DialogContent className="w-3/4 px-auto mx-auto flex flex-col ">
         <DialogHeader>
           <DialogTitle>
-            Create a new{" "}
+            New{" "}
             <span
               className={cn(
                 "m-1",
                 type === "income" ? "text-emerald-500" : "text-red-500"
+                
               )}
-            >
+              >
               {type}
             </span>
             transaction
           </DialogTitle>
         </DialogHeader>
+              
         <Form {...form}>
           <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
@@ -160,7 +163,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                 control={form.control}
                 name="category"
                 render={({ field }) => (
-                  <FormItem className="flex flex-col">
+                  <FormItem>
                     <FormLabel>Category</FormLabel>
                     <FormControl>
                       <CategoryPicker
@@ -187,7 +190,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                           <Button
                             variant={"outline"}
                             className={cn(
-                              "w-[200px] pl-3 text-left font-normal",
+                              "w-[100px] pl-3 text-left font-normal",
                               !field.value && "text-muted-foreground"
                             )}
                           >
@@ -239,6 +242,8 @@ function CreateTransactionDialog({ trigger, type }: Props) {
         </DialogFooter>
       </DialogContent>
     </Dialog>
+    
+    
   
   );
 }
