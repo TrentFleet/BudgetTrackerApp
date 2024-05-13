@@ -19,14 +19,13 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
     <>
       <div className="container flex flex-wrap items-center justify-center gap-4 py-6">
         <h2 className="text-2xl">Overview</h2>
-        <div className="flex items-center justify-center gap-4">
-      </div>
-      <div className="container flex flex-col gap-2">
-        <StatsCards
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
+        <div className="flex items-center justify-center gap-4"></div>
+        <div className="flex flex-col w-full gap-2">
+          <StatsCards
+            userSettings={userSettings}
+            from={dateRange.from}
+            to={dateRange.to}
+          />
           <DateRangePicker
             initialDateFrom={dateRange.from}
             initialDateTo={dateRange.to}
@@ -53,7 +52,6 @@ function Overview({ userSettings }: { userSettings: UserSettings }) {
           to={dateRange.to}
         />
       </div>
-      
     </>
   );
 }
